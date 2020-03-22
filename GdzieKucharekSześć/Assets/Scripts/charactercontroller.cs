@@ -5,7 +5,10 @@ public class CharacterController : MonoBehaviour
 {
 
     public float speed;
+    public float sprintRatio;
+    [SerializeField]
     bool stuned = false;
+    [SerializeField]
     float stunDuration;
     private Rigidbody2D rb2d;
 
@@ -24,12 +27,6 @@ public class CharacterController : MonoBehaviour
             if (stunDuration < 0)
                 stuned = false;
         }
-        
-
-
-
-
-
     }
 
     private void Stun(float time)
@@ -44,11 +41,12 @@ public class CharacterController : MonoBehaviour
 
         //Store the current vertical input in the float moveVertical.
         float moveVertical = Input.GetAxis("Vertical");
+        bool sprint = Input.GetKey(KeyCode.LeftShift);
 
         //Use the two store floats to create a new Vector2 variable movement.
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        rb2d.AddForce(movement * speed*Time.fixedDeltaTime*10);
+        rb2d.AddForce(movement * speed*Time.fixedDeltaTime*10*(stuned ? 0 : 1)*(sprint ?sprintRatio:1));
     }
 }
