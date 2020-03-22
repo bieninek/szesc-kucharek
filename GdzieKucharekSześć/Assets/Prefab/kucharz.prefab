@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2178207925041918089}
   - component: {fileID: 2178207925041918090}
   - component: {fileID: 2178207925041918091}
-  - component: {fileID: 2178207925041918092}
   m_Layer: 0
   m_Name: kucharz
   m_TagString: Untagged
@@ -104,19 +103,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2178207925041918092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2178207925041918093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 893a26091e1260048914a57262a5b9e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 200
-  sprintRatio: 2
-  stuned: 0
-  stunDuration: 0
