@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
-
+    public Item item = null;
     public float speed;
     public float sprintRatio;
     [SerializeField]
