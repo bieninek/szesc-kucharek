@@ -504,12 +504,12 @@ PrefabInstance:
     - target: {fileID: 8985290410509899315, guid: ad83600faa27f9945bc77290e7a46ca0,
         type: 3}
       propertyPath: pZmianyKierunku
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8985290410509899315, guid: ad83600faa27f9945bc77290e7a46ca0,
         type: 3}
       propertyPath: speed
-      value: 20
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8985290410509899325, guid: ad83600faa27f9945bc77290e7a46ca0,
         type: 3}
@@ -659,12 +659,12 @@ PrefabInstance:
     - target: {fileID: 2178207925041918089, guid: 57ac67d28dcfbb04c858f66bf4bc9ef0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 2178207925041918089, guid: 57ac67d28dcfbb04c858f66bf4bc9ef0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 2178207925041918089, guid: 57ac67d28dcfbb04c858f66bf4bc9ef0,
         type: 3}
