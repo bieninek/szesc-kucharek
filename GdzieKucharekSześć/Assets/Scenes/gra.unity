@@ -463,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893a26091e1260048914a57262a5b9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   speed: 200
   sprintRatio: 2
   stuned: 0
@@ -499,6 +500,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985290410509899315, guid: ad83600faa27f9945bc77290e7a46ca0,
+        type: 3}
+      propertyPath: pZmianyKierunku
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985290410509899315, guid: ad83600faa27f9945bc77290e7a46ca0,
+        type: 3}
+      propertyPath: speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8985290410509899325, guid: ad83600faa27f9945bc77290e7a46ca0,
         type: 3}
