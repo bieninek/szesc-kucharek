@@ -11,14 +11,32 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     float stunDuration;
     private Rigidbody2D rb2d;
+    Collider2D collider;
+    GameObject lastTouched;
 
     // Start is called before the first frame update
-
+   // private void OnCollisionStay2D(Collision2D collision)
+   // {
+   //     Debug.Log("OnCollisionEnter2D");
+   // }
     private void Start()
     {
+        
         rb2d = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
     }
-    // Update is called once per frame
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+      //  Debug.Log("OnCollisionEnter2D");
+        if (collision.gameObject.GetComponent<Item>()!=null&&item==null)
+        {
+
+            lastTouched = collision.gameObject;
+        }else if( collision.gameObject.GetComponent<Storage>() != null)
+        {
+            lastTouched = collision.gameObject;
+        }
+    }
     void Update()
     {
         if (stuned)
@@ -27,12 +45,43 @@ public class CharacterController : MonoBehaviour
             if (stunDuration < 0)
                 stuned = false;
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(lastTouched.GetComponent<Collider2D>()!=null&& collider.IsTouching(lastTouched.GetComponent<Collider2D>()))
+            {
+                if (item == null && lastTouched.GetComponent<Item>() != null)
+                {
+                    lastTouched.GetComponent<Item>().Grab(this);
+                }else if (lastTouched.GetComponent<Storage>() != null)
+                {
+                    if (item != null)
+                    {
+                        lastTouched.GetComponent<Storage>().interact(item);
+                    }
+                    else
+                    {
+                        lastTouched.GetComponent<Storage>().interact(this);
+                    }
+                }
+
+            }
+            
+        }
+    }
+    public void UnStun()
+    {
+        stunDuration = 0;
+        stuned = false;
+
+
     }
 
-    private void Stun(float time)
+    public void Stun(float time)
     {
         stunDuration = time;
         stuned = true;
+        
+
     }
 
     private void FixedUpdate()
